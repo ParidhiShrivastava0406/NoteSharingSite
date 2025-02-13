@@ -9,4 +9,4 @@ A web application built using Django for sharing and managing notes.
 
 ## 🚀 How to Run
 
-By directly running "python manage.py runserver" on the terminal
+By directly running "python manage.py runserver" on the terminal.
