@@ -1,0 +1,65 @@
+{% extends 'usernavigation.html' %}
+{% load static %}
+{% block body %}
+
+
+
+
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
+
+
+
+<div class="container mt-5" style="background-color : whitesmoke"><br>
+     <H2 class="text-center" style="font-family:'poppins'" >VIEW ALL NOTES</H2>
+<hr>
+
+    <table class="table table-bordered" id="example">
+        <thead>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Uploaded By</th>
+            <th>Uploading Date</th>
+            <th>Branch</th>
+            <th>Subject</th>
+            <th>Semester</th>
+            <th>File Type</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Download Notes</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in notes%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{ i.uploaded_by_role }}</td>
+            <td>{{i.uploadingdate}}</td>
+            <td>{{i.branch}}</td>
+            <td>{{i.subject}}</td>
+             <td>{{i.semester}}</td>
+            <td>{{i.filetype}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.status}}</td>
+             <td><a href="{{i.notesfile.url}}"class="btn text-white" style="background-color:FDA403" download>Download</a></td>
+
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<br>
+</div>
+<br>
+
+<script src ="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src ="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script src ="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
+<script>
+new DataTable('#example');
+</script>
+
+
+{% endblock %}

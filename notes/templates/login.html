@@ -1,0 +1,65 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+
+
+{% if error == "no" %}
+<script>
+    alert(' Logged In Successfully ');
+    window.location=('{% url 'profile' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert(' Invalid Login Credentials , Try Again ');
+</script>
+{% endif %}
+
+
+
+<div class="container mt-5" style="background-color : whitesmoke">
+<div class="row">
+    <div class="col-sm-6"><br>
+        <img src =" {%static 'images/login1.gif'%}" style="width:90% ; height : 400px"><br><br>
+         </div>
+    <div class="col-sm-6"><br>
+        <h2 style="font-family:'poppins'">LOGIN </h2>
+        <p>If You Are Already A Member, Easily Login </p>
+        <br>
+       <form method="post">
+           {% csrf_token %}
+           <label> Email Address</label>
+           <input type = "email" class="form-control" placeholder="Enter Email ID" name="emailid" >
+           <br>
+             <label> Password</label>
+           <input type = "password" class="form-control" placeholder="Enter Password" name="pwd">
+          <br>
+           <label> Branch </label>
+
+                <select class="form-control" name="branch">
+                    <option value="Select Branch">Select Branch</option>
+                    <option value="Computer Science">Computer Science </option>
+                    <option value="Data Science">Data Science </option>
+                    <option value="AIML">AIML </option>
+                    <option value="Business System">Business System </option>
+                    <option value="Information Technology">Information Technology </option>
+                    <option value="Mechanical">Mechanical </option>
+                    <option value="Civil">Civil</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Electronics">Electronics</option>
+                </select>
+
+
+           <input type="submit" class="btn mt-4 text-white" style="width: 120px; background-color:FDA403; border:none; font-weight:bold" value="LOGIN" name="LOGIN">
+           <br><br><br>
+        <p>If You Don't Have An Account,<a href="{% url 'signup' %}" class="btn btn-link text-whiter ">CREATE AN ACCOUNT</a>
+        </p>
+
+       </form>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}

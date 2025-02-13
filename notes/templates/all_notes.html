@@ -1,0 +1,70 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block body %}
+
+
+
+
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
+
+
+
+<div class="container-fluid mt-5" style="background-color : whitesmoke ;width: 95%;" >
+    <br>
+    <H2 class="text-center" style="font-family:'poppins'"  >VIEW ALL NOTES</H2>
+<hr>
+
+    <table class="table table-bordered" id="example">
+        <thead>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Uploaded By</th>
+            <th>Uploading Date</th>
+            <th>Branch</th>
+            <th>Subject</th>
+            <th>Semester</th>
+            <th>Download Notes</th>
+            <th>File Type</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Assign Status</th>
+            <th>Action</th>
+
+        </tr>
+ </thead>
+        <tbody>
+        {% for i in notes%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.user.username}}</td>
+            <td>{{i.uploadingdate}}</td>
+            <td>{{i.branch}}</td>
+            <td>{{i.subject}}</td>
+            <td>{{i.semester}}</td>
+            <td><a href="{{i.notesfile.url}}"class="btn text-white" style="background-color:FDA403" download>Download</a></td>
+            <td>{{i.filetype}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.status}}</td>
+            <td><a href="{% url 'assign_status' i.id %}"class="btn text-white" style="background-color:A9A9A9">Assign&nbsp;Status</a></td>
+            <td><a href="{% url 'delete_notes' i.id %}"class="btn text-white" style="background-color:3D3B40"  onclick="return confirm('Are you sure...?')">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+<br>
+</div>
+<br>
+
+
+<script src ="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src ="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script src ="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
+<script>
+new DataTable('#example');
+</script>
+
+
+{% endblock %}

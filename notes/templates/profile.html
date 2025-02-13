@@ -1,0 +1,95 @@
+{% extends 'usernavigation.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container mt-5" style="background-color : whitesmoke">
+<br>
+<h2 class="text-center" style="font-family:'poppins'"> PROFILE </h2>
+    <hr>
+   <div class="row">
+      <div class="col-md-6">
+         <b>Full Name :</b>
+      </div>
+
+      <div class="col-md-6">
+         {{data.user.first_name}} {{data.user.last_name}}
+      </div>
+   </div>
+
+<hr>
+    <div class="row">
+      <div class="col-md-6">
+         <b>Email ID :</b>
+      </div>
+
+      <div class="col-md-6">
+         {{data.user.username}}
+      </div>
+   </div>
+
+
+   <hr>
+    <div class="row">
+      <div class="col-md-6">
+         <b>Contact :</b>
+      </div>
+
+      <div class="col-md-6">
+         {{data.contact}}
+      </div>
+   </div>
+
+
+   <hr>
+    <div class="row">
+      <div class="col-md-6">
+         <b>Semester :</b>
+      </div>
+
+      <div class="col-md-6">
+         {{data.semester}}
+      </div>
+   </div>
+
+
+
+   <hr>
+    <div class="row">
+      <div class="col-md-6">
+         <b>Branch :</b>
+      </div>
+
+      <div class="col-md-6">
+         {{data.branch}}
+      </div>
+   </div>
+   <hr>
+   <h2 class="text-center"> <a href="{% url 'edit_profile'%}" class="  btn text-white mt-4" style="background-color:FDA403;width: 120px;border:none" >Edit Profile</a></h2>
+<br><br>
+</div>
+
+<br><br><br>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

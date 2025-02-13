@@ -1,0 +1,116 @@
+{% extends 'usernavigation.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container mt-5" style="background-color : whitesmoke"><br>
+   <h2 class="text-center" style="font-family:'poppins'"> EDIT PROFILE </h2>
+   <hr>
+
+   <div class="row">
+       <div class="col-sm-6">
+       <form method="post">
+           {% csrf_token%}
+
+
+           <div class="form-row">
+               <div class="form-group col-md-6">
+                   <label>FirstName</label>
+                   <input type="text" class="form-control" value="{{data.user.first_name}}" name="firstname">
+               </div>
+
+               <div class="form-group col-md-6">
+                   <label>LastName</label>
+                   <input type="text" class="form-control" value="{{data.user.last_name}}" name="lastname">
+               </div>
+           </div>
+
+           <div class="form-row">
+               <div class="form-group col-md-12">
+                   <label>Email ID</label>
+                   <input type="text" class="form-control" value="{{data.user.username}}" name="emailid" readonly>
+               </div>
+           </div>
+
+           <div class="form-row">
+               <div class="form-group col-md-12">
+                   <label>Contact</label>
+                   <input type="text" class="form-control" value="{{data.contact}}" name="contact" >
+               </div>
+           </div>
+
+           <div class="form-row">
+               <div class="form-group col-md-12">
+                   <label>Semester</label>
+                   <input type="text" class="form-control" value="{{data.semester}}" name="semester" >
+               </div>
+           </div>
+
+           <div class="form-row">
+               <div class="form-group col-md-6">
+                   <label>Branch</label>
+                   <select class="form-control"  name="branch" >
+                        <option value="Select branch">Select branch</option>
+                       <option value="Computer Science">Computer Science </option>
+                       <option value="Data Science">Data Science </option>
+                       <option value="AIML">AIML </option>
+                       <option value="Business System">Business System </option>
+                       <option value="Information Technology">Information Technology </option>
+                       <option value="Mechanical">Mechanical </option>
+                       <option value="Civil">Civil</option>
+                       <option value="Electrical">Electrical</option>
+                       <option value="Electronics">Electronics</option>
+                   </select>
+               </div>
+               <div class="form-group col-md-6 mt-2"><br>
+                   <input type="text" value="{{data.branch}}" class="form-control" readonly>
+               </div>
+           </div>
+
+
+
+<input type="Submit" value="UPDATE" class="btn text-white mt-4" style="display: block; margin: 0 auto;width: 120px; background-color:FDA403; border:none;" >
+
+       </form>
+
+       </div>
+       <div class="col-sm-6">
+       <img src =" {%static 'images/edit.jpg'%}" style="width:90% ; height : 400px">
+    </div>
+   </div>
+    <br><br>
+</div>
+
+
+{% if error %}
+<script>
+    alert('Profile Updated Successfully');
+    window.location = "{% url 'profile' %}";
+</script>
+{% endif %}
+
+<br><br><br>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

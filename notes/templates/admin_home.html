@@ -1,0 +1,91 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+  .container1{
+    background-color : lightgrey;
+    border-radius : 8px;
+    }
+
+ h2,h4{padding : 10px }
+
+.mydiv:hover{
+transform : translateY(-10px)
+ }
+
+
+
+
+</style>
+<br><br>
+<div class="container mt-5">
+    <div class="row">
+
+
+        <div class="col-sm-3 text-center mydiv ">
+            <div class="container1">
+                <h2 class="text" style="color:FDA403">{{ pn }}</h2>
+                <a href="{% url 'pending_notes' %}"><h4 class="text-dark">Pending Notes</h4></a>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text" style="color:FDA403">{{ an }}</h2>
+                <a href="{% url 'accepted_notes' %}"><h4 class="text-dark">Accepted Notes</h4></a>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text" style="color:FDA403">{{ rn }}</h2>
+                <a href="{% url 'rejected_notes' %}"><h4 class="text-dark">Rejected Notes</h4></a>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text" style="color:FDA403">{{ alln }}</h2>
+                <a href="{% url 'all_notes' %}"><h4 class="text-dark">All Notes</h4></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<br><br><br><br><br><br>
+<footer class="container mt-5 text-center">
+    <p style="font-size : 20pt  ; color  : brown ; font-weight : bold">  Copyright&copy; ALL RIGHTS RESERVED <span style =" color : danger"> | </span>
+        
+</footer>
+{% endblock  %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

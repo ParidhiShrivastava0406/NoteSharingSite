@@ -1,0 +1,54 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+<style>
+.image{
+width :100%;
+height :470px;
+background:url({% static 'images/notes1.jpg' %});
+background-repeat : no-repeat;
+background-position : center
+}
+</style>
+
+<div class="image ">
+<div class="transparentbox " >
+<p style="color: F94C10" >Study Notes Sharing Site</p>
+</div>
+</div>
+<h4 class="text-center text-secondary mt-5">JUST 4 STEPS TO FOLLOW </h4>
+<br><br>
+<div class="container ">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="box1"><a href="{%url 'signup'%}">
+                <p class="halfcircle"><i class="text-center fas fa-user-circle text-white mt-4" style="font-size:40px"></i></p>
+                <p class="halfcircleBottom " style="font-size: 20px">Create Account</p></a>
+            </div>
+        </div>
+
+     <div class="col-sm-3">
+            <div class="box1"><a href="{%url 'login'%}">
+                <p class="halfcircle"><i class="text-center fas fa-sign-in-alt text-white mt-4" style="font-size:40px"></i></p>
+                <p class="halfcircleBottom " style="font-size: 20px">Login</p></a>
+            </div>
+        </div>
+         <div class="col-sm-3">
+            <div class="box1" ><a href="{%url 'upload_notes'%}"><p class="halfcircle"><i class="text-center fas fa-upload text-white mt-4" style="font-size:40px"></i></p>
+                <p class="halfcircleBottom " style="font-size: 20px">Upload Notes</p></a>
+
+            </div>
+        </div>
+         <div class="col-sm-3">
+            <div class="box1"><a href="{%url 'viewallnotes'%}">
+                <p class="halfcircle"><i class="text-center fas fa-download text-white mt-4" style="font-size:40px"></i></p>
+                <p class="halfcircleBottom " style="font-size: 20px">Download Notes</p></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<br><br><br>
+
+{% endblock%}

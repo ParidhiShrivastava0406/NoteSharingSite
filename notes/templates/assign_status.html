@@ -1,0 +1,53 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block body %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
+
+<div class="container mt-5" style="background-color: whitesmoke; max-width: 600px; margin: 440;"><br>
+    <h2 class="text-center mb-4" style="font-family:'poppins'">ASSIGN STATUS
+        <hr style="width: 50%; margin: auto; border-width: 2px;   color: 000000;">
+    </h2>
+
+
+    <form method="post" >
+        {% csrf_token %}
+
+        <label for="status" class="form-label" style="font-size: 20px;">Select Status</label>
+        <br>
+        <select name="status" id="status" class="form-control" style="font-size: 17px;">
+
+            <option value="Accept">Accept</option>
+            <option value="Reject">Reject</option>
+        </select>
+        <br>
+        <center><a href="{% url 'all_notes' %}" class="btn btn-primary " style="width: 150px; background-color:FDA403; border:none" > Back  </a>
+        <input type="submit" value="Submit" class="btn btn-primary " style="width: 150px; background-color:FDA403; border:none" ></center>
+        <br>
+    </form>
+
+</div>
+
+{% if error == "no" %}
+<script>
+    alert(' Status Updated Successfully ');
+    window.location=('{% url 'all_notes' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert(' Something went wrong, Try Again ');
+</script>
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
+<script>
+    new DataTable('#example');
+</script>
+
+{% endblock %}
