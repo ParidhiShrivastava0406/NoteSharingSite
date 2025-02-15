@@ -1,4 +1,4 @@
-# 📚 Notes Sharing Platform - Built with Django & Python 🚀  
+# 📚 Notes Sharing Platform - Django & Python 🚀  
 
 A **modern, user-friendly Notes Sharing Platform** built with **Django** that allows students and educators to **upload, share, and access study materials effortlessly**. Designed with a **stunning UI/UX**, this platform enhances collaborative learning.  
 
