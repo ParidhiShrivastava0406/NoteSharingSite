@@ -2,7 +2,7 @@
 
 A **modern, user-friendly Notes Sharing Platform** built with **Django** that allows students and educators to **upload, share, and access study materials effortlessly**. Designed with a **stunning UI/UX**, this platform enhances collaborative learning.  
 
---
+---
 
 ## ✨ Features  
 
@@ -22,7 +22,7 @@ A **modern, user-friendly Notes Sharing Platform** built with **Django** that al
 - **Admins** can manage users, notes, and reported content.  
 - **Verified educators** can upload exclusive content.
 
---
+---
 
 ## 🚀 Installation & Setup  
 
