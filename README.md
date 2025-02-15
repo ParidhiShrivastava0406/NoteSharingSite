@@ -15,7 +15,7 @@ A **modern, user-friendly Notes Sharing Platform** built with **Django** that al
 - **Dark & Light Mode** for better readability.  
 
 ### 👥 **User Authentication & Profiles**  
-- Secure **signup/login** with Django authentication.  
+- Secure **signup/login** with authentication.  
 - Personalized **dashboard** with uploaded & saved notes.
 - 
 ### 🔒 **Role-Based Access Control**  
