@@ -32,5 +32,6 @@ A **modern, user-friendly Notes Sharing Platform** built with **Django** that al
 - Install **django** 
 
 ### 🚀 Run the server 
-
+```
 python manage.py runserver
+```
